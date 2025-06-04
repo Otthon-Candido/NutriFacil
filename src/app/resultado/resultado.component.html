@@ -1,0 +1,34 @@
+<div *ngIf="resultado" class="resultado">
+  <h3>Resultados</h3>
+  <p><strong>TMB:</strong> {{resultado.tmb}} kcal</p>
+  <p><strong>IMC:</strong> {{resultado.imc}} ({{resultado.classificacaoIMC}})</p>
+  <p><strong>Água diária recomendada:</strong> {{resultado.agua}} ml</p>
+
+<div  class="recomendacoes-container">
+
+
+    <h4>Recomendações</h4>
+    <div *ngFor="let cat of recomendacoes; let i = index" class="accordion-item">
+      <button (click)="toggleAccordion(i)" class="accordion-button">
+        {{cat.nome}}
+        <span class="arrow" [class.open]="isOpen(i)">&#9660;</span>
+      </button>
+      <div class="accordion-content" [class.open]="isOpen(i)">
+        <ul>
+          <li *ngFor="let item of cat.itens">{{item}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<div class="receitas-container" *ngIf="receitas?.length > 0">
+  <h4>Receitas para {{ usuario.dieta | titlecase }}</h4>
+  <div *ngFor="let receita of receitas" class="receita-item">
+    <h5>{{ receita.nome }}</h5>
+    <p><strong>Ingredientes:</strong> {{ receita.ingredientes.join(', ') }}</p>
+    <p><strong>Modo de preparo:</strong> {{ receita.modoPreparo }}</p>
+  </div>
+</div> -->
+
+

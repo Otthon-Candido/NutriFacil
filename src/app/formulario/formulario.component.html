@@ -1,0 +1,71 @@
+<div class="form-container">
+  <h2>Informe seus dados</h2>
+  <form (ngSubmit)="calcular()" #form="ngForm" class="form">
+    <div class="form-group">
+      <label for="dieta">Dieta:</label>
+      <select id="dieta" [(ngModel)]="usuario.dieta" name="dieta" required>
+        <option value="mediterranea">Mediterrânea</option>
+        <option value="lowcarb">Low Carb</option>
+        <option value="cetogenica">Cetogênica</option>
+        <option value="vegetariana">Vegetariana</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group small">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" [(ngModel)]="usuario.peso" name="peso" required />
+      </div>
+
+      <div class="form-group small">
+        <label for="altura">Altura (cm):</label>
+        <input type="number" id="altura" [(ngModel)]="usuario.altura" name="altura" required />
+      </div>
+
+      <div class="form-group small">
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" [(ngModel)]="usuario.idade" name="idade" required />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group small">
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" [(ngModel)]="usuario.sexo" name="sexo" required>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+
+      <div class="form-group small">
+        <label for="objetivo">Objetivo:</label>
+        <select id="objetivo" [(ngModel)]="usuario.objetivo" name="objetivo" required>
+          <option value="emagrecimento">Emagrecimento</option>
+          <option value="hipertrofia">Hipertrofia</option>
+        </select>
+      </div>
+    </div>
+
+    <fieldset class="restricoes">
+      <legend>Restrições:</legend>
+      <div class="checkbox-group" *ngFor="let r of restricoesOptions">
+        <input
+          type="checkbox"
+          [value]="r.value"
+          [checked]="usuario.restricoes.includes(r.value)"
+          (change)="onToggleRestricao(r.value, $event)"
+          id="{{r.value}}"
+        />
+        <label for="{{r.value}}">{{r.label}}</label>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn-primary">Calcular</button>
+  </form>
+
+<!-- Passa usuario e resultado para o componente resultado -->
+<app-resultado [usuario]="usuario" [resultado]="resultado"></app-resultado>
+
+
+
+
