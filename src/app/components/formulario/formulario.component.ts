@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ResultadoComponent } from '../resultado/resultado.component';
 
 type Sexo = 'masculino' | 'feminino';
 type Dieta = 'mediterranea' | 'lowcarb' | 'cetogenica' | 'vegetariana' | null;
@@ -17,18 +18,20 @@ interface Usuario {
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrls: ['./formulario.component.scss']
+  styleUrls: ['./formulario.component.scss'],
 })
 export class FormularioComponent {
-usuario: Usuario = {
-  peso: null,
-  altura: null,
-  idade: null,
-  sexo: '',
-  dieta: null,
-  objetivo: '',
-  restricoes: []
-};
+  @ViewChild(ResultadoComponent) resultadoComponent!: ResultadoComponent;
+  usuario: Usuario = {
+    peso: null,
+    altura: null,
+    idade: null,
+    sexo: '',
+    dieta: null,
+    objetivo: '',
+    restricoes: [],
+  };
+  restricoesSelecionadas: string[] = [];
 
   resultado: any = null;
   restricoesOptions = [
@@ -36,30 +39,35 @@ usuario: Usuario = {
     { label: 'Glúten', value: 'gluten' },
     { label: 'Proteína do leite', value: 'proteina_do_leite' },
     { label: 'Ovo', value: 'ovo' },
-    { label: 'Frutos do mar', value: 'frutos_do_mar' }
+    { label: 'Frutos do mar', value: 'frutos_do_mar' },
   ];
 
- restricoesSelecionadas: string[] = [];
-
-
-onToggleRestricao(value: string, event: any) {
-  if (event.target.checked) {
-    this.restricoesSelecionadas.push(value);
-  } else {
-    this.restricoesSelecionadas = this.restricoesSelecionadas.filter(r => r !== value);
+  atualizarRestricoes(event: any, valor: string) {
+    if (event.target.checked) {
+      // Adiciona o valor ao array se não estiver presente
+      if (!this.restricoesSelecionadas.includes(valor)) {
+        this.restricoesSelecionadas.push(valor);
+      }
+    } else {
+      // Remove o valor do array se estiver presente
+      this.restricoesSelecionadas = this.restricoesSelecionadas.filter(
+        (item) => item !== valor
+      );
+    }
   }
-}
-
 
   calcular() {
+    this.usuario.restricoes = this.restricoesSelecionadas;
+
     const { peso, altura, idade, sexo, dieta, objetivo } = this.usuario;
 
     if (!peso || !altura || !idade || !sexo || !dieta || !objetivo) {
       alert('Por favor, preencha todos os campos obrigatórios!');
       return;
     }
-    this.usuario.restricoes = this.restricoesSelecionadas;
-
+    if (this.resultadoComponent) {
+      this.resultadoComponent.callRecomendacoes(this.resultado);
+    }
 
     // Cálculo TMB (Taxa Metabólica Basal)
     let tmb = 0;
@@ -70,7 +78,7 @@ onToggleRestricao(value: string, event: any) {
     }
 
     // Cálculo IMC
-    const imc = peso / ((altura / 100) ** 2);
+    const imc = peso / (altura / 100) ** 2;
 
     let classificacaoIMC = '';
     if (imc < 18.5) classificacaoIMC = 'Abaixo do peso';
@@ -86,7 +94,7 @@ onToggleRestricao(value: string, event: any) {
       tmb: Math.round(tmb),
       imc: imc.toFixed(1),
       classificacaoIMC,
-      agua
+      agua,
     };
   }
 }

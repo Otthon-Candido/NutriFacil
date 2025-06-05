@@ -45,20 +45,20 @@
         </select>
       </div>
     </div>
+<fieldset class="restricoes">
+  <legend>Restrições:</legend>
+  <div class="checkbox-group" *ngFor="let r of restricoesOptions">
+    <input
+      type="checkbox"
+      [value]="r.value"
+      [checked]="restricoesSelecionadas.includes(r.value)"
+      (change)="atualizarRestricoes($event, r.value)"
+      id="{{r.value}}"
+    />
+    <label for="{{r.value}}">{{r.label}}</label>
+  </div>
+</fieldset>
 
-    <fieldset class="restricoes">
-      <legend>Restrições:</legend>
-      <div class="checkbox-group" *ngFor="let r of restricoesOptions">
-        <input
-          type="checkbox"
-          [value]="r.value"
-          [checked]="usuario.restricoes.includes(r.value)"
-          (change)="onToggleRestricao(r.value, $event)"
-          id="{{r.value}}"
-        />
-        <label for="{{r.value}}">{{r.label}}</label>
-      </div>
-    </fieldset>
 
     <button type="submit" class="btn-primary">Calcular</button>
   </form>

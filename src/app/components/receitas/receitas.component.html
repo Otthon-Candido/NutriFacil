@@ -1,0 +1,16 @@
+<div class="receitas-container" *ngIf="receitasFiltradas.length > 0">
+  <h3>Receitas Recomendadas</h3>
+  <div *ngFor="let receita of receitasFiltradas" class="receita-card">
+    <h4>{{ receita.nome }}</h4>
+    <div class="ingredientes">
+      <strong>Ingredientes:</strong>
+      <ul>
+        <li *ngFor="let ingrediente of receita.ingredientes">{{ ingrediente }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="receitasFiltradas.length === 0 && !firstLoad" class="sem-receitas">
+  <p>Nenhuma receita encontrada para os alimentos selecionados.</p>
+</div>
