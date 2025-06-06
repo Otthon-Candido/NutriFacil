@@ -1,31 +1,110 @@
-<<<<<<< HEAD
 # NutriFacil
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.9.
+## 🥗 Visão Geral do Projeto
 
-## Development server
+O **NutriFacil** é uma solução completa para planejamento alimentar personalizado, desenvolvida para ajudar usuários a montar planos alimentares de acordo com suas preferências e objetivos. A proposta é oferecer uma ferramenta intuitiva e eficaz para gerenciar dietas, calcular métricas de saúde e fornecer recomendações nutricionais.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Funcionalidades Principais
 
-## Code scaffolding
+- **Seleção de Dieta:** Escolha entre Mediterrânea, Low Carb, Cetogênica e Vegetariana.
+- **Cálculos Nutricionais:** TMB (Mifflin-St Jeor), IMC e consumo diário de água.
+- **Recomendações de Alimentos:** Sugestões de proteínas, vegetais e carboidratos com base na dieta e restrições.
+- **Gerenciamento de Restrições:** Suporte a alergias como Lactose, Glúten, Ovos, Frutos do Mar, etc.
+- **Objetivos Personalizados:** Suporte para emagrecimento e hipertrofia.
+- **Testes:** Cobertura com testes unitários (Jasmine/Karma) e possibilidade de testes E2E.
+- **Documentação Atualizada:** README estruturado e boas práticas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tecnologias Utilizadas
 
-## Build
+- Angular CLI
+- TypeScript
+- SCSS + HTML5
+- ng2-charts
+- FormsModule
+- ng-bootstrap
+- Karma & Jasmine (testes)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📁 Estrutura do Projeto
 
-## Running unit tests
+```plaintext
+NutriFacil/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── formulario/
+│   │   │   ├── receitas/
+│   │   │   └── resultado/
+│   │   ├── home/
+│   │   └── services/
+│   │       ├── calculo/
+│   │       ├── receitas/
+│   │       └── recomendacoes/
+│   ├── assets/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss
+├── angular.json
+├── package.json
+├── README.md
+├── tsconfig*.json
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Como Configurar e Rodar o Projeto
 
-## Running end-to-end tests
+Para configurar e rodar o projeto NutriFacil em sua máquina local, siga os passos abaixo:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Pré-requisitos
 
-## Further help
+Certifique-se de ter o Node.js (que inclui o npm) e o Angular CLI instalados em sua máquina.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# NutriFacil
->>>>>>> 8d634b62973054b6b2c54091b66d04d27842540c
+1.  **Instalar Node.js e npm:** Baixe e instale a versão LTS mais recente do site oficial do Node.js: [https://nodejs.org/](https://nodejs.org/)
+
+2.  **Instalar Angular CLI:** Abra seu terminal ou prompt de comando e execute:
+    ```bash
+    npm install -g @angular/cli
+    ```
+
+### Instalação
+
+1.  **Clone o Repositório:**
+    ```bash
+    git clone https://github.com/Otthon-Candido/NutriFacil.git
+    ```
+
+2.  **Navegue até o Diretório do Projeto:**
+    ```bash
+    cd NutriFacil
+    ```
+
+3.  **Instale as Dependências:**
+    ```bash
+    npm install
+    ```
+
+### Rodar a Aplicação
+
+Para iniciar o servidor de desenvolvimento e rodar a aplicação localmente:
+
+```bash
+ng serve
+```
+
+Após a compilação, a aplicação estará disponível em `http://localhost:4200/` em seu navegador. As alterações no código-fonte serão automaticamente recarregadas.
+
+## Executando Testes
+
+### Testes Unitários
+
+Para executar os testes unitários via [Karma](https://karma-runner.github.io/):
+
+```bash
+ng test
+```
+
+### Testes End-to-End (E2E)
+
+Para executar os testes end-to-end, você precisará de um pacote que implemente capacidades de teste E2E (ex: Cypress, Protractor). Se configurado, você pode rodar:
+
+```bash
+ng e2e
+```
