@@ -4,6 +4,9 @@
 
 O **NutriFacil** é uma solução completa para planejamento alimentar personalizado, desenvolvida para ajudar usuários a montar planos alimentares de acordo com suas preferências e objetivos. A proposta é oferecer uma ferramenta intuitiva e eficaz para gerenciar dietas, calcular métricas de saúde e fornecer recomendações nutricionais.
 
+![Screenshot 2025-06-05 at 23-31-19 NutriFacil](https://github.com/user-attachments/assets/b345de3d-2e1e-407f-b4ef-6285e6ea8778)
+
+
 ## 🚀 Funcionalidades Principais
 
 - **Seleção de Dieta:** Escolha entre Mediterrânea, Low Carb, Cetogênica e Vegetariana.
@@ -12,44 +15,27 @@ O **NutriFacil** é uma solução completa para planejamento alimentar personali
 - **Gerenciamento de Restrições:** Suporte a alergias como Lactose, Glúten, Ovos, Frutos do Mar, etc.
 - **Objetivos Personalizados:** Suporte para emagrecimento e hipertrofia.
 - **Testes:** Cobertura com testes unitários (Jasmine/Karma) e possibilidade de testes E2E.
-- **Documentação Atualizada:** README estruturado e boas práticas.
+
+![Screenshot 2025-06-05 at 23-32-40 NutriFacil](https://github.com/user-attachments/assets/2b8fd509-4103-44d6-ba5e-1e1c088adb88)
+
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Angular CLI
-- TypeScript
-- SCSS + HTML5
-- ng2-charts
-- FormsModule
-- ng-bootstrap
-- Karma & Jasmine (testes)
+- Angular CLI (ferramenta para desenvolvimento)
 
-## 📁 Estrutura do Projeto
+- TypeScript (linguagem principal)
 
-```plaintext
-NutriFacil/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── formulario/
-│   │   │   ├── receitas/
-│   │   │   └── resultado/
-│   │   ├── home/
-│   │   └── services/
-│   │       ├── calculo/
-│   │       ├── receitas/
-│   │       └── recomendacoes/
-│   ├── assets/
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── main.ts
-│   └── styles.scss
-├── angular.json
-├── package.json
-├── README.md
-├── tsconfig*.json
+- HTML5 & SCSS (marcação e estilos)
 
-## Como Configurar e Rodar o Projeto
+- ng2-charts (biblioteca de gráficos)
+
+- FormsModule (módulo Angular para formulários)
+
+- ng-bootstrap (componentes UI Bootstrap para Angular)
+
+- Karma & Jasmine (ferramentas para testes unitários)
+
+  ## Como Configurar e Rodar o Projeto
 
 Para configurar e rodar o projeto NutriFacil em sua máquina local, siga os passos abaixo:
 
@@ -91,20 +77,27 @@ ng serve
 
 Após a compilação, a aplicação estará disponível em `http://localhost:4200/` em seu navegador. As alterações no código-fonte serão automaticamente recarregadas.
 
-## Executando Testes
+## 📁 Estrutura do Projeto
 
-### Testes Unitários
-
-Para executar os testes unitários via [Karma](https://karma-runner.github.io/):
-
-```bash
-ng test
-```
-
-### Testes End-to-End (E2E)
-
-Para executar os testes end-to-end, você precisará de um pacote que implemente capacidades de teste E2E (ex: Cypress, Protractor). Se configurado, você pode rodar:
-
-```bash
-ng e2e
-```
+```plaintext
+NutriFacil/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── formulario/
+│   │   │   ├── receitas/
+│   │   │   └── resultado/
+│   │   ├── home/
+│   │   └── services/
+│   │       |
+│   │       ├── receitas/
+│   │       └── recomendacoes/
+│   ├── assets/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss
+├── angular.json
+├── package.json
+├── README.md
+├── tsconfig*.json
