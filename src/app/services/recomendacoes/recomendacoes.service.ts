@@ -31,7 +31,7 @@ export class RecomendacoesService {
       return lista.filter(item => {
         const itemLower = item.toLowerCase();
         if (restricoes.includes('lactose') && (itemLower.includes('leite') || itemLower.includes('whey'))) return false;
-        if (restricoes.includes('gluten') && ['aveia', 'quinoa', 'arroz integral', 'cevada', 'couscous', 'macarrão integral', 'seitan'].some(g => itemLower.includes(g))) return false;
+        if (restricoes.includes('gluten') && ['aveia', 'quinoa', 'arroz integral', 'cevada', 'couscous', 'macarrão integral', 'pão integral','seitan'].some(g => itemLower.includes(g))) return false;
         if (restricoes.includes('ovo') && itemLower === 'ovos') return false;
         if (restricoes.includes('proteina_do_leite') && ['tofu', 'whey protein'].some(p => itemLower.includes(p))) return false;
         if (restricoes.includes('frutos_do_mar') && (itemLower.includes('peixe') || itemLower.includes('camarão') || itemLower.includes('marisco'))) return false;
