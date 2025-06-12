@@ -1,3 +1,19 @@
+# Integrantes
+
+**Integrantes:**
+Arthur Henrique Ribeiro Chaves - RA: 422141860
+Cairo Angelo Silva - RA: 42124827
+João Pedro Ferreira Santiago - RA: 422119806
+Lucas Ferreira Colombini - RA: 422142408
+Otthon de Oliveira Candido - RA: 42125548
+Samuel Pereira dos Santos - RA: 422220417
+Vítor Hugo Damascena de Oliveira - RA: 42123335
+Vítor Gabriel Campolina Silva - RA: 422222139
+
+#  Link Apresentação Google Slides
+
+https://docs.google.com/presentation/d/18EQJe-AV8Mkw9av3VHNPWT67-HwSZeEj_qldOc6AmDE/edit?usp=sharing
+
 # NutriFacil
 
 ## 🥗 Visão Geral do Projeto
