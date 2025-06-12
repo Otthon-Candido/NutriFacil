@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormularioComponent } from './formulario.component';
 import { FormsModule } from '@angular/forms';
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 @Component({
@@ -9,6 +9,9 @@ import { By } from '@angular/platform-browser';
   template: '',
 })
 class ResultadoComponentStub {
+  @Input() resultado: any;
+  @Input() usuario: any;
+
   callRecomendacoes = jasmine.createSpy('callRecomendacoes');
 }
 
@@ -27,7 +30,6 @@ describe('FormularioComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FormularioComponent);
     component = fixture.componentInstance;
-
     fixture.detectChanges();
 
     const resultadoDebugElement = fixture.debugElement.query(By.directive(ResultadoComponentStub));
@@ -76,7 +78,11 @@ describe('FormularioComponent', () => {
       restricoes: [],
     };
     component.restricoesSelecionadas = [];
+
     component.calcular();
+
+    // Força atualização dos inputs no componente filho
+    fixture.detectChanges();
 
     expect(component.resultado.tmb).toBe(1674);
     expect(component.resultado.imc).toBe('22.9');

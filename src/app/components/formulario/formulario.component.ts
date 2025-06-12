@@ -65,9 +65,7 @@ export class FormularioComponent {
       alert('Por favor, preencha todos os campos obrigatórios!');
       return;
     }
-    if (this.resultadoComponent) {
-      this.resultadoComponent.callRecomendacoes(this.resultado);
-    }
+
 
     // Cálculo TMB (Taxa Metabólica Basal)
     let tmb = 0;
@@ -96,5 +94,9 @@ export class FormularioComponent {
       classificacaoIMC,
       agua,
     };
+
+        if (this.resultadoComponent) {
+      this.resultadoComponent.callRecomendacoes(this.resultado);
+    }
   }
 }
