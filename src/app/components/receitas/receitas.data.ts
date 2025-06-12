@@ -1,10 +1,10 @@
-
 export interface Receita {
   nome: string;
   ingredientes: string[];
   dieta: string[];
   objetivo: string[];
   restricoesProibidas: string[];
+  modoPreparo?: string;
 }
 
 
@@ -569,6 +569,22 @@ export const RECEITAS: Receita[] = [
     ingredientes: ['Beterraba', 'Limão', 'Azeite'],
     dieta: ['vegetariana'],
     objetivo: ['emagrecimento'],
+    restricoesProibidas: []
+  },
+  {
+    nome: 'Salada Grega',
+    ingredientes: ['Tomate', 'Pepino', 'Azeitona', 'Queijo feta'],
+    modoPreparo: 'Misture todos os ingredientes.',
+    dieta: ['mediterranea', 'vegetariana'],
+    objetivo: ['manter', 'emagrecer'],
+    restricoesProibidas: ['lactose']
+  },
+  {
+    nome: 'Peixe Assado',
+    ingredientes: ['Peixe', 'Azeite', 'Limão'],
+    modoPreparo: 'Asse o peixe com azeite e limão.',
+    dieta: ['mediterranea', 'lowcarb'],
+    objetivo: ['manter', 'emagrecer'],
     restricoesProibidas: []
   }
 ];

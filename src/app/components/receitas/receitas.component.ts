@@ -1,9 +1,6 @@
 import {
   Component,
   Input,
-  OnChanges,
-  SimpleChanges,
-  ViewChild,
 } from '@angular/core';
 import { Dieta } from 'src/app/services/receitas/receitas.service';
 
@@ -44,10 +41,11 @@ export class ReceitasComponent {
 
     // Filtra pelas restrições
     if (this.restricoesUsuario.length > 0) {
+      const restricoesLower = this.restricoesUsuario.map(r => r.toLowerCase());
       receitas = receitas.filter(
         (receita) =>
           !receita.restricoesProibidas.some((rp: string) =>
-            this.restricoesUsuario.includes(rp)
+            restricoesLower.includes(rp.toLowerCase())
           )
       );
     }
