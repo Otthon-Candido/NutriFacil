@@ -218,3 +218,40 @@ h2 {
     flex-direction: column;
   }
 }
+
+.logo-titulo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.logo-grande {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  object-fit: contain; // Mostra o desenho inteiro, mas pode manter bordas brancas
+  background: #fff;
+  padding: 0px;          // Remova qualquer padding
+  display: block;
+}
+
+
+.nutrifacil-titulo {
+  font-size: 2.7rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #00ff80 30%, #0aeedb 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.form-titulo {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0 0 24px 0;
+}
